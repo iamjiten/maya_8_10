@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .selected {
+      color: white;
+      background-color: red;
+    }
+
+    .prev {
+      color: black;
+      background-color: yellow;
+    }
+
+    .next {
+      color: white;
+      background-color: blue;
+    }
+
+    .hightlight {
+      color: yellow;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <ul>
+    <li onclick="highlight(this)">Item 1</li>
+    <li onclick="highlight(this)">Item 2</li>
+    <li onclick="highlight(this)">Item 3</li>
+    <li onclick="highlight(this)">Item 4</li>
+    <li onclick="highlight(this)">Item 5</li>
+  </ul>
+
+  <ul id="mylist">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+  </ul>
+  <button onclick="highlightItems()">Highlight items</button>
+
+  <div id="example">Old Content</div>
+
+  <div id="exampleone">Hello, <span style="display: none;">invisible</span> world.</div>
+
+  <div id="parent">
+    <div id="child">child</div>
+  </div>
+
+  <p id="demo">Paragraph text</p>
+
+  <select id="selectdemo" onchange="changeBackgroundColor()">
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+  </select>
+
+
+  <h1 id="mouseEvent" onmouseover="mouseOver()" onmouseout="mouseOut()">Mouse over me</h1>
+  <input type="text" id="inputdemo" onkeyup="onKeyDownDemo()">
+
+  <button id="buttonEvent">Click me!</button>
+
+  <script>
+
+    function highlight(element) {
+      var items = document.querySelectorAll('li')
+      items.forEach(function (item) {
+        items.className = ''
+      })
+      element.className = 'selected'
+      const next = element.nextElementSibling
+      const prev = element.previousElementSibling
+
+      if (next) {
+        next.className = "next"
+      }
+
+      if (prev) {
+        prev.className = "prev"
+      }
+
+      // console.log('prevSib', prev.textContent);
+      // console.log('nextSib', next.textContent);
+      //     element.previousSibling.style.color = 'red'
+      // element.nextSibling.style = 'yellow'
+
+    }
+
+
+    function highlightItems() {
+      var mylist = document.getElementById('mylist')
+
+      // mylist.firstChild.className = 'highlight'
+      // mylist.lastChild.className = 'highlight'
+      mylist.firstElementChild.className = 'hightlight'
+      mylist.lastElementChild.className = 'hightlight'
+
+    }
+
+    document.getElementById('example').innerHTML = "<p>New <strong>HTML</strong>Content</p>";
+    console.log(document.getElementById('exampleone').textContent);
+    console.log(document.getElementById('exampleone').innerText)
+    console.log(document.getElementById('exampleone').innerHTML);
+
+    var newDiv = document.createElement("div")
+    var newText = document.createTextNode('Hello, world!');
+    var parentDiv = document.getElementById('parent');
+    parentDiv.appendChild(newDiv)
+
+    var childNode = document.getElementById('child')
+    parentDiv.removeChild(childNode)
+
+    var paragraph = document.getElementById('demo');
+
+
+    // if (paragraph.hasAttribute('data-example')) {
+    //   alert("Attribute Value: " + paragraph.getAttribute('data-example'))
+    // } else {
+    //   alert('Attribute does not exist')
+    // }
+
+    paragraph.className = 'hightlight'
+    paragraph.setAttribute('data-example', "Hi, there")
+
+    function changeBackgroundColor() {
+      var selectedColor = document.getElementById('selectdemo').value;
+      console.log({ selectedColor });
+
+      document.body.style.backgroundColor = selectedColor
+    }
+
+    function mouseOver() {
+      document.getElementById('mouseEvent').style.color = 'red'
+    }
+
+    function mouseOut() {
+      document.getElementById('mouseEvent').style.color = 'black'
+    }
+
+    function onKeyDownDemo() {
+      document.getElementById('inputdemo').style.backgroundColor = 'red'
+    }
+
+    var button = document.getElementById('buttonEvent');
+
+    button.addEventListener('click', function () {
+      alert("Handler 1: Button Clicked!");
+    });
+
+    button.addEventListener('click', function () {
+      alert("Handler 2: Button Clicked! Again");
+    })
+
+    button.addEventListener('mouseover', function () {
+      button.style.backgroundColor = 'yellow';
+    })
+
+    button.addEventListener('mouseout', function () {
+      button.style.backgroundColor = ''
+    })
+  </script>
+
+</body>
+
+</html>

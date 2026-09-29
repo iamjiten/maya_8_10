@@ -1,0 +1,18 @@
+body {
+  background-image: url("./images.jpeg");
+  /* background-repeat: repeat-y; */
+
+  background-color: #476db5;
+}
+
+h1 {
+  color: #0000ff;
+}
+
+hr {
+  color: red;
+}
+
+p {
+  margin-left: 20px;
+}
