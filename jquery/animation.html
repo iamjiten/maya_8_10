@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #animateDiv {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      position: relative;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    // $(document).ready(function () {
+    //   $('#animateBtn').click(function () {
+    //     $('#animateDiv').animate({
+    //       height: '200px',
+    //       width: '200px',
+    //       lef: 200,
+    //       opacity: .5
+    //     }, 1000).hide()
+    //   })
+    // })
+    $(document).ready(function () {
+      $('#animateBtn').click(function () {
+        $('#animateDiv').animate({
+          height: '200px',
+          width: '200px',
+          lef: 200,
+          opacity: .5
+        }, 1000, function () {
+          $(this).hide('slow')
+        })
+      })
+    })
+  </script>
+</head>
+
+<body>
+
+  <button id="animateBtn">Animate</button>
+  <div id="animateDiv"></div>
+</body>
+
+</html>

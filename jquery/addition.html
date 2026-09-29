@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('button').click(function () {
+        var num1 = parseFloat($('#num1').val());
+        var num2 = parseFloat($('#num2').val());
+        var result = num1 + num2
+        $('#result').text(result)
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <input type="number" id="num1" />
+  <input type="number" id="num2" />
+  <button>Calculate</button>
+  <p>Result: <span id="result"></span></p>
+
+</body>
+
+</html>

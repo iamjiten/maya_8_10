@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#fadeIn").click(function () {
+        $("#test").fadeIn();
+      });
+      $("#fadeOut").click(function () {
+        $("#test").fadeOut();
+      });
+      $("#fadeToggle").click(function () {
+        $("#test").fadeToggle();
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <button id="fadeIn">Fade In</button>
+  <button id="fadeOut">Fade Out</button>
+  <button id="fadeToggle">Fade Toggle</button>
+
+  <p id="test">This text will be fade in/out</p>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JQuery</title>
+  <style>
+    img {
+      height: 500px;
+      width: 500px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+  <script>
+    // $(document).ready(function () {
+    //   // alert('This document is ready');
+    //   // $('#example').css('color', 'blue');
+
+    //   $('#img').on('load', function () {
+    //     alert("This image has been loaded.");
+    //   })
+    // })
+  </script>
+</head>
+
+<body>
+
+  <!-- <p id="example">This text will turn blue when the document is ready.</p>
+
+  <img id="img"
+    src="https://images.pexels.com/photos/38126808/pexels-photo-38126808.jpeg?_gl=1*6vytxu*_ga*MTI5MjM3NjA5OS4xNzg3NjI4NDkx*_ga_8JE65Q40S6*czE3ODc2Mjg0OTEkbzEkZzEkdDE3ODc2Mjg1MzQkajE3JGwwJGgw"
+    alt=""> -->
+
+  <button id="clickMe">Click me</button>
+
+  <script>
+    // var button = document.getElementById('clickMe')
+    // button.addEventListener('click', buttonClicked)
+
+    // (jQuery)('#clickMe').click(buttonClicked)
+    // $('#clickMe').click(buttonClicked)
+    var jq = (jQuery).noConflict()
+    jq('#clickMe').click(buttonClicked)
+
+
+    function buttonClicked() {
+      alert('Button was clicked');
+    }
+
+  </script>
+</body>
+
+</html>

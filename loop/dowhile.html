@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do While</title>
+</head>
+
+<body>
+
+  <p id="para">
+    this the text
+  </p>
+
+  <ul>
+    <li class="hot">10</li>
+    <li class="hot">2</li>
+    <li class="hot">3</li>
+    <li class="hot">4</li>
+    <li class="hot">5</li>
+  </ul>
+  <button onclick="cheangeParaColor()">Change Coor</button>
+
+  <p id="para1">Para1</p>
+  <p id="para2">Para2</p>
+  <p id="para3">Para3</p>
+  <p id="para4">Para4</p>
+  <p id="para5">Para5</p>
+  <p id="para6">Para6</p>
+
+  <button onclick="callMe()">Click Me</button>
+  <script>
+    // const paragraph = document.getElementById('para')
+    // function callMe() {
+    //   paragraph.innerText = 'red'
+    //   paragraph.style.color = 'red'
+    // }
+
+    // const element = document.querySelector('li.hot')
+    // console.log({ element });
+
+    // const elements = document.getElementsByClassName('hot')
+    // for (let index = 0; index < elements.length; index++) {
+    //   elements[index].style.color = 'red'
+    //   elements[index].innerHTML = 'List ' + (index + 1)
+    // }
+
+
+    // const elements = document.getElementsByTagName('p')
+    // console.log({ elements });
+
+    // const elements = document.querySelectorAll('.hot')
+    // console.log({ elements });
+
+    function cheangeParaColor() {
+      const elements = document.getElementsByClassName('hot')
+      for (let index = 0; index < elements.length; index++) {
+        elements[index].style.color = 'red'
+        elements[index].innerHTML = 'List ' + (index + 1)
+      }
+    }
+  </script>
+  <div>
+    <div>
+      <div></div>
+    </div>
+  </div>
+
+  <script>
+    // for (let index = 0; index < 0; index++) {
+    //   document.write(index + '<br>')
+    // }
+
+    // var index = 0
+    // while (index > 10) {
+    //   document.write(index + '<br>');
+    //   index++;
+    // }
+
+
+    var index = 0;
+    do {
+      document.write(index + '<br>');
+      index++;
+    } while (index > 10);
+
+
+  </script>
+</body>
+
+</html>

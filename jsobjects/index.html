@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var car = {
+      make: 'Toyota',
+      model: 'Corolla',
+      year: 2005
+    }
+
+    var person = {
+      firsName: 'John',
+      lastName: "Doe",
+      age: 30,
+      fullName: function () {
+        return this.firsName + ' ' + this.lastName;
+      },
+      greet: function () {
+        return "Hello, My name is " + this.fullName()
+      },
+      birthday: function () {
+        this.age += 1;
+        return "Happy birthday! I am now " + this.age + " years old.";
+      }
+    }
+    console.log(person.firsName);
+    console.log(person.lastName);
+    console.log(person.fullName());
+    console.log(person.greet());
+    console.log(person.birthday());
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#slideUp").click(function () {
+        $('#div1').slideUp('slow');
+      })
+      $("#slideDown").click(function () {
+        $('#div1').slideDown('slow');
+      })
+      $("#slideToggle").click(function () {
+        $('#div1').slideToggle('slow');
+      })
+    });
+  </script>
+</head>
+
+<body>
+
+
+  <button id="slideUp">Slide Up</button>
+  <button id="slideDown">Slide Down</button>
+  <button id="slideToggle">Slide Toggle</button><br><br>
+
+  <div id="div1" style="width:80px;height:80px;background-color:red;"></div><br>
+
+  <!-- <p id="div1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam in quibusdam id magnam vero voluptas
+    illum,
+    blanditiis mollitia quod sequi voluptate eaque tempore, aspernatur fugiat possimus ipsa dolores eveniet libero.
+  </p> -->
+</body>
+
+</html>

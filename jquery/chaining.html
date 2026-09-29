@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#clickMe').click(function () {
+        $('p').slideUp(1000).slideDown(1000).fadeOut(1000).fadeIn(1000);
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <button id="clickMe">Click Me</button>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quam est debitis nostrum quidem error quod!
+    Adipisci accusamus illo assumenda? Explicabo quibusdam assumenda distinctio quisquam! Esse atque accusantium optio
+    itaque!
+  </p>
+
+</body>
+
+</html>

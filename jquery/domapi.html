@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .remove {
+      cursor: pointer;
+      color: red;
+    }
+
+    #div1 {
+      width: 150px;
+      height: 150px;
+      background-color: red;
+      margin-left: 20px;
+      margin-bottom: 20px;
+      padding: 30px;
+    }
+
+    #div2 {
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // $('button').click(function () {
+      //   var ptext = $('p').text()
+      //   console.log(ptext);
+      //   $('p').text('Updated text')
+      // })
+      // $('button').click(function () {
+      //   var ptext = $('p').html()
+      //   console.log(ptext);
+      // })
+
+      // $('button').click(function () {
+      //   var inputElem = $('#input')
+      //   var inputValue = inputElem.val();
+      //   // $('ul').append("<li>" + inputValue + "</li>")
+      //   // $('ul').prepend("<li>" + inputValue + "</li>")
+      //   $('ul').after("<div>" + inputValue + "</div>")
+
+      //   inputElem.val('')
+      // })
+
+
+      $('#removeButton').click(function () {
+        $('ul').remove();
+      })
+
+      $('.remove').click(function () {
+        $(this).parent().remove()
+      })
+
+      $('#removeChild').click(function () {
+        $('ul').empty();
+      })
+
+      $('#insertBtn').click(function () {
+        $('#list').append("<li>New Item</li>")
+        // $("<li> New Item</li>").insertAfter("#list li:last");
+      })
+
+      $('#removeBtn').click(function () {
+        $("#list li:last").remove()
+      })
+
+      const div1Width = $('#div1').width();
+      const div1Height = $('#div1').height();
+      const div1InnerWidth = $('#div1').innerWidth();
+      const div1InnerHeight = $('#div1').innerHeight();
+      console.log({ div1Height, div1Width, div1InnerWidth, div1InnerHeight });
+    });
+  </script>
+</head>
+
+<body>
+
+  <input id="input" />
+  <button>Click Me</button>
+  <!-- <p>Input: <strong id="inputText"></strong></p> -->
+
+  <button id="removeButton">Remove list</button>
+  <button id="removeChild">Remove list Child</button>
+  <ul>
+    <li>Item 1 <span class="remove">X</span></li>
+    <li>Item 2 <span class="remove">X</span></li>
+    <li>Item 3 <span class="remove">X</span></li>
+  </ul>
+
+
+  <button id="insertBtn">Insert New Item</button>
+  <button id="removeBtn">Remove Last Item</button>
+  <ul id="list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+
+  <div id="div1"></div>
+  <div id="div2"></div>
+</body>
+
+</html>
